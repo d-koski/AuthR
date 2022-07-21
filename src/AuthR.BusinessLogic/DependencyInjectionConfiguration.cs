@@ -9,7 +9,9 @@ public static class DependencyInjectionConfiguration
 {
     public static void AddBusinessLogic(this IServiceCollection services)
     {
-        services.AddMediatR(Assembly.GetExecutingAssembly());
+        var executingAssembly = Assembly.GetExecutingAssembly();
+        services.AddAutoMapper(executingAssembly);
+        services.AddMediatR(executingAssembly);
         
         services.AddDataAccess();
     }
