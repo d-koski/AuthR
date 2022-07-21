@@ -1,42 +1,36 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{567F37B7-F80F-448D-8769-9B09FF1689CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthR.Api", "src\AuthR.Api\AuthR.Api.csproj", "{44439825-246B-488F-8649-5CA991A8B2EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthR.Api", "src\AuthR.Api\AuthR.Api.csproj", "{44439825-246B-488F-8649-5CA991A8B2EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthR.BusinessLogic", "src\AuthR.BusinessLogic\AuthR.BusinessLogic.csproj", "{781A9376-83B4-4B45-93EE-12D2D9C20C75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthR.BusinessLogic", "src\AuthR.BusinessLogic\AuthR.BusinessLogic.csproj", "{781A9376-83B4-4B45-93EE-12D2D9C20C75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthR.DataAccess", "src\AuthR.DataAccess\AuthR.DataAccess.csproj", "{E7098363-3447-4835-9D89-0AFF354592D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthR.DataAccess", "src\AuthR.DataAccess\AuthR.DataAccess.csproj", "{E7098363-3447-4835-9D89-0AFF354592D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthR.DataAccess.Entities", "src\AuthR.DataAccess.Entities\AuthR.DataAccess.Entities.csproj", "{F44D083D-E671-47BD-AA80-2179644F633A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthR.DataAccess.Entities", "src\AuthR.DataAccess.Entities\AuthR.DataAccess.Entities.csproj", "{F44D083D-E671-47BD-AA80-2179644F633A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthR.BusinessLogic.Models", "src\AuthR.BusinessLogic.Models\AuthR.BusinessLogic.Models.csproj", "{D6F60B3C-248A-45A3-8A7E-10CFDA82EF8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthR.BusinessLogic.Models", "src\AuthR.BusinessLogic.Models\AuthR.BusinessLogic.Models.csproj", "{D6F60B3C-248A-45A3-8A7E-10CFDA82EF8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthR.BusinessLogic.Abstractions", "src\AuthR.BusinessLogic.Abstractions\AuthR.BusinessLogic.Abstractions.csproj", "{2359A30B-1041-4596-995E-13F6AD9438EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthR.BusinessLogic.Abstractions", "src\AuthR.BusinessLogic.Abstractions\AuthR.BusinessLogic.Abstractions.csproj", "{2359A30B-1041-4596-995E-13F6AD9438EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthR.DataAccess.Abstractions", "src\AuthR.DataAccess.Abstractions\AuthR.DataAccess.Abstractions.csproj", "{6F627A2E-7120-4EA3-A9FB-18869FE9F533}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthR.DataAccess.Abstractions", "src\AuthR.DataAccess.Abstractions\AuthR.DataAccess.Abstractions.csproj", "{6F627A2E-7120-4EA3-A9FB-18869FE9F533}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{03BA4AA0-B99F-4B5B-A145-8277F318B422}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthR.BusinessLogic.UnitTests", "tests\AuthR.BusinessLogic.UnitTests\AuthR.BusinessLogic.UnitTests.csproj", "{9C8E634A-C930-45F3-9E2C-7263941C5525}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthR.BusinessLogic.UnitTests", "tests\AuthR.BusinessLogic.UnitTests\AuthR.BusinessLogic.UnitTests.csproj", "{9C8E634A-C930-45F3-9E2C-7263941C5525}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthR.DataAccess.UnitTests", "tests\AuthR.DataAccess.UnitTests\AuthR.DataAccess.UnitTests.csproj", "{075965E8-3CFF-4249-A675-40F5AB4C368C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthR.DataAccess.UnitTests", "tests\AuthR.DataAccess.UnitTests\AuthR.DataAccess.UnitTests.csproj", "{075965E8-3CFF-4249-A675-40F5AB4C368C}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{FF94623B-4B50-4579-8B70-8F99C2E5E849}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{44439825-246B-488F-8649-5CA991A8B2EF} = {567F37B7-F80F-448D-8769-9B09FF1689CA}
-		{781A9376-83B4-4B45-93EE-12D2D9C20C75} = {567F37B7-F80F-448D-8769-9B09FF1689CA}
-		{E7098363-3447-4835-9D89-0AFF354592D9} = {567F37B7-F80F-448D-8769-9B09FF1689CA}
-		{F44D083D-E671-47BD-AA80-2179644F633A} = {567F37B7-F80F-448D-8769-9B09FF1689CA}
-		{D6F60B3C-248A-45A3-8A7E-10CFDA82EF8E} = {567F37B7-F80F-448D-8769-9B09FF1689CA}
-		{2359A30B-1041-4596-995E-13F6AD9438EB} = {567F37B7-F80F-448D-8769-9B09FF1689CA}
-		{6F627A2E-7120-4EA3-A9FB-18869FE9F533} = {567F37B7-F80F-448D-8769-9B09FF1689CA}
-		{9C8E634A-C930-45F3-9E2C-7263941C5525} = {03BA4AA0-B99F-4B5B-A145-8277F318B422}
-		{075965E8-3CFF-4249-A675-40F5AB4C368C} = {03BA4AA0-B99F-4B5B-A145-8277F318B422}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{44439825-246B-488F-8649-5CA991A8B2EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -75,5 +69,26 @@ Global
 		{075965E8-3CFF-4249-A675-40F5AB4C368C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{075965E8-3CFF-4249-A675-40F5AB4C368C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{075965E8-3CFF-4249-A675-40F5AB4C368C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF94623B-4B50-4579-8B70-8F99C2E5E849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF94623B-4B50-4579-8B70-8F99C2E5E849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF94623B-4B50-4579-8B70-8F99C2E5E849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF94623B-4B50-4579-8B70-8F99C2E5E849}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{44439825-246B-488F-8649-5CA991A8B2EF} = {567F37B7-F80F-448D-8769-9B09FF1689CA}
+		{781A9376-83B4-4B45-93EE-12D2D9C20C75} = {567F37B7-F80F-448D-8769-9B09FF1689CA}
+		{E7098363-3447-4835-9D89-0AFF354592D9} = {567F37B7-F80F-448D-8769-9B09FF1689CA}
+		{F44D083D-E671-47BD-AA80-2179644F633A} = {567F37B7-F80F-448D-8769-9B09FF1689CA}
+		{D6F60B3C-248A-45A3-8A7E-10CFDA82EF8E} = {567F37B7-F80F-448D-8769-9B09FF1689CA}
+		{2359A30B-1041-4596-995E-13F6AD9438EB} = {567F37B7-F80F-448D-8769-9B09FF1689CA}
+		{6F627A2E-7120-4EA3-A9FB-18869FE9F533} = {567F37B7-F80F-448D-8769-9B09FF1689CA}
+		{9C8E634A-C930-45F3-9E2C-7263941C5525} = {03BA4AA0-B99F-4B5B-A145-8277F318B422}
+		{075965E8-3CFF-4249-A675-40F5AB4C368C} = {03BA4AA0-B99F-4B5B-A145-8277F318B422}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {49BEB7C5-657E-4222-B14E-C68D3F4AE09F}
 	EndGlobalSection
 EndGlobal

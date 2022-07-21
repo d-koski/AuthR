@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  authr.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings__Database=Server=authr.database; Database=AuthR; User=sa; Password=N60Kr6561641Lk3978Svx1xu
+    ports:
+      - "80"
+      - "443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    depends_on:
+      - authr.database
+
+  authr.database:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=N60Kr6561641Lk3978Svx1xu
+    ports:
+      - "1433"

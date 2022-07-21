@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  authr.api:
+    image: ${DOCKER_REGISTRY-}authrapi
+    build:
+      context: .
+      dockerfile: src/AuthR.Api/Dockerfile

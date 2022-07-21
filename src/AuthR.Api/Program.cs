@@ -1,4 +1,6 @@
 using AuthR.BusinessLogic;
+using AuthR.DataAccess;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddBusinessLogic();
+builder.Services.AddBusinessLogic(builder.Configuration);
 
 var app = builder.Build();
 
@@ -25,5 +27,12 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+if (bool.TryParse(builder.Configuration["RUNNING_IN_CONTAINER"], out var isRunningInContainer) && isRunningInContainer)
+{
+    using var serviceScope = app.Services.CreateScope();
+    var context = serviceScope.ServiceProvider.GetRequiredService<DatabaseContext>();
+    context.Database.Migrate();
+}
 
 app.Run();
