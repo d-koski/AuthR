@@ -27,12 +27,16 @@ public static class UserEntityBuilder
     private static void BuildProperties(this EntityTypeBuilder<UserEntity> entityBuilder)
     {
         entityBuilder.Property(x => x.Guid)
+            .IsRequired()
+            .HasDefaultValueSql("NEWID()")
             .ValueGeneratedOnAdd();
         
         entityBuilder.Property(x => x.Email)
+            .IsRequired()
             .HasMaxLength(320);
 
         entityBuilder.Property(x => x.PasswordHash)
+            .IsRequired()
             .HasMaxLength(256);
     }
 }
