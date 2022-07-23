@@ -1,3 +1,4 @@
+using AuthR.Api;
 using AuthR.BusinessLogic;
 using AuthR.DataAccess;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddApi();
 builder.Services.AddBusinessLogic(builder.Configuration);
 
 var app = builder.Build();
