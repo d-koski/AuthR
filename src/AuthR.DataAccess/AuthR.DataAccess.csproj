@@ -13,6 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\AuthR.Common.Abstractions\AuthR.Common.Abstractions.csproj" />
       <ProjectReference Include="..\AuthR.DataAccess.Abstractions\AuthR.DataAccess.Abstractions.csproj" />
       <ProjectReference Include="..\AuthR.DataAccess.Entities\AuthR.DataAccess.Entities.csproj" />
     </ItemGroup>

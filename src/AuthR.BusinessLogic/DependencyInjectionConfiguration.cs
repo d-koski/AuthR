@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using AuthR.Common;
 using AuthR.DataAccess;
 using MediatR;
 using Microsoft.Extensions.Configuration;
@@ -13,7 +14,8 @@ public static class DependencyInjectionConfiguration
         var executingAssembly = Assembly.GetExecutingAssembly();
         services.AddAutoMapper(executingAssembly);
         services.AddMediatR(executingAssembly);
-        
+
+        services.AddCommons();
         services.AddDataAccess(configuration);
     }
 }

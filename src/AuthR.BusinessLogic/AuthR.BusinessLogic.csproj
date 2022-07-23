@@ -8,12 +8,14 @@
 
     <ItemGroup>
       <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="6.0.7" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0-preview.6.22324.4" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\AuthR.BusinessLogic.Abstractions\AuthR.BusinessLogic.Abstractions.csproj" />
       <ProjectReference Include="..\AuthR.BusinessLogic.Models\AuthR.BusinessLogic.Models.csproj" />
+      <ProjectReference Include="..\AuthR.Common\AuthR.Common.csproj" />
       <ProjectReference Include="..\AuthR.DataAccess.Abstractions\AuthR.DataAccess.Abstractions.csproj" />
       <ProjectReference Include="..\AuthR.DataAccess.Entities\AuthR.DataAccess.Entities.csproj" />
       <ProjectReference Include="..\AuthR.DataAccess\AuthR.DataAccess.csproj" />
