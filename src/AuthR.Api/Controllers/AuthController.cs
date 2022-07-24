@@ -16,7 +16,7 @@ public class AuthController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpPost]
+    [HttpPost("Register")]
     public async Task<ActionResult<UserViewModel>> Register(
         [FromBody] RegisterUserCommand command,
         CancellationToken cancellationToken)
