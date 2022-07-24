@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
+using AuthR.BusinessLogic.Exceptions;
 using AuthR.BusinessLogic.Models.Commands;
 using AuthR.BusinessLogic.Models.ViewModels;
-using AuthR.DataAccess;
 using AuthR.DataAccess.Abstractions;
 using AuthR.DataAccess.Abstractions.Repositories;
 using AuthR.DataAccess.Entities;
@@ -25,7 +25,7 @@ public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, U
     {
         var exists = await _userRepository.ExistsAsync(command.Email, cancellationToken);
         if (exists)
-            throw new Exception("A user with the provided email is already registered.");
+            throw new EntityExistsException("A user with the provided email is already registered.");
         
         var passwordHash = HashPassword(command.Password);
         var entity = new UserEntity

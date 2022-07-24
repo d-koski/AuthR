@@ -30,6 +30,8 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.UseMiddlewares();
+
 if (bool.TryParse(builder.Configuration["RUNNING_IN_CONTAINER"], out var isRunningInContainer) && isRunningInContainer)
 {
     using var serviceScope = app.Services.CreateScope();
