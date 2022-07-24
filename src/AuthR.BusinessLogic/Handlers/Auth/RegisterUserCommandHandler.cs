@@ -25,7 +25,7 @@ public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, U
     {
         var exists = await _userRepository.ExistsAsync(command.Email, cancellationToken);
         if (exists)
-            throw new EntityExistsException("A user with the provided email is already registered.");
+            throw new EntityExistsException("UserEmailAlreadyRegistered");
         
         var passwordHash = HashPassword(command.Password);
         var entity = new UserEntity
