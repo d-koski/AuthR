@@ -1,4 +1,5 @@
-﻿using AuthR.BusinessLogic.Handlers.Auth;
+﻿using AuthR.BusinessLogic.Exceptions;
+using AuthR.BusinessLogic.Handlers.Auth;
 using AuthR.BusinessLogic.Models.Commands;
 using AuthR.DataAccess.Abstractions;
 using AuthR.DataAccess.Abstractions.Repositories;
@@ -25,7 +26,7 @@ public class RegisterUserCommandHandlerTests
         _userRepositoryMock.Setup(x => x.ExistsAsync(command.Email, It.IsAny<CancellationToken>()))
             .ReturnsAsync(true);
 
-        await Assert.ThrowsAsync<Exception>(() => _handler.Handle(command));
+        await Assert.ThrowsAsync<EntityExistsException>(() => _handler.Handle(command));
     }
 
     [Fact]
