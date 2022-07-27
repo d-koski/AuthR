@@ -1,15 +1,15 @@
 ﻿using System.Reflection;
 using AuthR.BusinessLogic.Abstractions.Services;
 using AuthR.BusinessLogic.Services;
-using AuthR.Common;
-using AuthR.DataAccess;
+using AuthR.Common.DependencyInjection;
+using AuthR.DataAccess.DependencyInjection;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AuthR.BusinessLogic;
+namespace AuthR.BusinessLogic.DependencyInjection;
 
-public static class DependencyInjectionConfiguration
+public static class BusinessLogicServiceCollectionExtensions
 {
     public static void AddBusinessLogic(this IServiceCollection services, IConfiguration configuration)
     {

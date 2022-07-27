@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AuthR.DataAccess;
+namespace AuthR.DataAccess.DependencyInjection;
 
-public static class DependencyInjectionConfiguration
+public static class DataAccessServiceCollectionExtensions
 {
     public static void AddDataAccess(this IServiceCollection services, IConfiguration configuration)
     {

@@ -2,9 +2,9 @@
 using AuthR.Common.Services;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AuthR.Common;
+namespace AuthR.Common.DependencyInjection;
 
-public static class DependencyInjectionConfiguration
+public static class CommonServiceCollectionExtensions
 {
     public static void AddCommons(this IServiceCollection services)
     {
