@@ -1,4 +1,6 @@
 ﻿using System.Reflection;
+using AuthR.BusinessLogic.Abstractions.Services;
+using AuthR.BusinessLogic.Services;
 using AuthR.Common;
 using AuthR.DataAccess;
 using MediatR;
@@ -17,5 +19,8 @@ public static class DependencyInjectionConfiguration
 
         services.AddCommons();
         services.AddDataAccess(configuration);
+
+        services.AddScoped<IHashingService, HashingService>();
+        services.AddScoped<ITokenService, TokenService>();
     }
 }

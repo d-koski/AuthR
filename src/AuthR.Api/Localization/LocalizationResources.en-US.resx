@@ -24,4 +24,10 @@
     <data name="InternalServerError" xml:space="preserve">
         <value>Internal server error.</value>
     </data>
+    <data name="UserEmailNotFound" xml:space="preserve">
+        <value>A user with the provided email was not found.</value>
+    </data>
+    <data name="UserInvalidPassword" xml:space="preserve">
+        <value>Invalid password.</value>
+    </data>
 </root>

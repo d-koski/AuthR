@@ -19,6 +19,12 @@ public class UserRepository : IUserRepository
         return exists;
     }
 
+    public async Task<UserEntity?> GetByEmailAsync(string email, CancellationToken cancellationToken)
+    {
+        var entity = await _databaseContext.Users.FirstOrDefaultAsync(x => x.Email == email, cancellationToken);
+        return entity;
+    }
+
     public async Task InsertAsync(UserEntity entity, CancellationToken cancellationToken)
     {
         await _databaseContext.Users.AddAsync(entity, cancellationToken);

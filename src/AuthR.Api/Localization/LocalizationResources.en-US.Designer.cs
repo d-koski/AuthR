@@ -77,5 +77,23 @@ namespace AuthR.Api.Localization {
                 return ResourceManager.GetString("UserEmailAlreadyRegistered", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A user with the provided email was not found..
+        /// </summary>
+        internal static string UserEmailNotFound {
+            get {
+                return ResourceManager.GetString("UserEmailNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid password..
+        /// </summary>
+        internal static string UserInvalidPassword {
+            get {
+                return ResourceManager.GetString("UserInvalidPassword", resourceCulture);
+            }
+        }
     }
 }

@@ -37,6 +37,6 @@ public static class UserEntityBuilder
 
         entityBuilder.Property(x => x.PasswordHash)
             .IsRequired()
-            .HasMaxLength(256);
+            .HasMaxLength(512);
     }
 }

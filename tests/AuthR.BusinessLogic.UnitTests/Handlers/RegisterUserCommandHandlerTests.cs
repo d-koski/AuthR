@@ -1,6 +1,8 @@
-﻿using AuthR.BusinessLogic.Exceptions;
-using AuthR.BusinessLogic.Handlers.Auth;
+﻿using AuthR.BusinessLogic.Abstractions.Services;
+using AuthR.BusinessLogic.Exceptions;
+using AuthR.BusinessLogic.Handlers.User;
 using AuthR.BusinessLogic.Models.Commands;
+using AuthR.Common.Abstractions.Services;
 using AuthR.DataAccess.Abstractions;
 using AuthR.DataAccess.Abstractions.Repositories;
 using AuthR.DataAccess.Entities;
@@ -9,13 +11,18 @@ namespace AuthR.BusinessLogic.UnitTests.Handlers;
 
 public class RegisterUserCommandHandlerTests
 {
-    private readonly RegisterUserCommandHandler _handler;
+    private readonly Mock<IHashingService> _hashingServiceMock = new();
     private readonly Mock<IUnitOfWork> _unitOfWorkMock = new();
     private readonly Mock<IUserRepository> _userRepositoryMock = new();
 
+    private readonly RegisterUserCommandHandler _handler;
+    
     public RegisterUserCommandHandlerTests()
     {
-        _handler = new RegisterUserCommandHandler(_unitOfWorkMock.Object, _userRepositoryMock.Object);
+        _handler = new RegisterUserCommandHandler(
+            _hashingServiceMock.Object,
+            _unitOfWorkMock.Object,
+            _userRepositoryMock.Object);
     }
 
     [Fact]
@@ -45,7 +52,7 @@ public class RegisterUserCommandHandlerTests
         await _handler.Handle(command);
         
         _userRepositoryMock.Verify(x => x.InsertAsync(
-                It.Is<UserEntity>(x => x.PasswordHash != command.Password),
+                It.Is<UserEntity>(e => e.PasswordHash != command.Password),
                 It.IsAny<CancellationToken>()),
             Times.Once);
     }

@@ -18,6 +18,7 @@ public class DatabaseContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<RefreshTokenEntity>().Build();
         modelBuilder.Entity<UserEntity>().Build();
     }
 

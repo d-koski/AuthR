@@ -24,4 +24,13 @@ public class UserController : ControllerBase
         var result = await _mediator.Send(command, cancellationToken);
         return result;
     }
+
+    [HttpPost("Authenticate")]
+    public async Task<ActionResult<TokensViewModel>> Authenticate(
+        [FromBody] AuthenticateUserCommand command,
+        CancellationToken cancellationToken)
+    {
+        var result = await _mediator.Send(command, cancellationToken);
+        return result;
+    }
 }

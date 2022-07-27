@@ -1,4 +1,5 @@
 ﻿using System.Net.Mime;
+using System.Security.Authentication;
 using AuthR.Api.Localization;
 using AuthR.BusinessLogic.Exceptions;
 using AuthR.BusinessLogic.Models.ViewModels;
@@ -31,7 +32,9 @@ public class ExceptionHandlerMiddleware : IMiddleware
     {
         var (statusCode, message) = exception switch
         {
+            AuthenticationException ex => (StatusCodes.Status401Unauthorized, new ErrorViewModel(_localizer[ex.Message])),
             EntityExistsException ex => (StatusCodes.Status409Conflict, new ErrorViewModel(_localizer[ex.Message])),
+            EntityNotFoundException ex => (StatusCodes.Status404NotFound, new ErrorViewModel(_localizer[ex.Message])),
             _ => (StatusCodes.Status500InternalServerError, new ErrorViewModel(_localizer["InternalServerError"])),
         };
         
