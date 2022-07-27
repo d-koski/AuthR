@@ -1,4 +1,4 @@
-using AuthR.BusinessLogic.Models.Commands;
+using AuthR.BusinessLogic.Models.Commands.User;
 using AuthR.BusinessLogic.Models.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

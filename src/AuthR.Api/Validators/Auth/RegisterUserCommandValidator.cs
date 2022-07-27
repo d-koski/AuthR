@@ -1,4 +1,4 @@
-﻿using AuthR.BusinessLogic.Models.Commands;
+﻿using AuthR.BusinessLogic.Models.Commands.User;
 using FluentValidation;
 
 namespace AuthR.Api.Validators.Auth;

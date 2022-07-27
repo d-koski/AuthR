@@ -1,7 +1,7 @@
 ﻿using AuthR.BusinessLogic.Models.ViewModels;
 using MediatR;
 
-namespace AuthR.BusinessLogic.Models.Commands;
+namespace AuthR.BusinessLogic.Models.Commands.User;
 
 public class AuthenticateUserCommand : IRequest<TokensViewModel>
 {
