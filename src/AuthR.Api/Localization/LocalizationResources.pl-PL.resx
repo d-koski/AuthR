@@ -30,4 +30,7 @@
     <data name="UserInvalidPassword" xml:space="preserve">
         <value>Nieprawidłowe hasło.</value>
     </data>
+    <data name="InvalidRefreshToken" xml:space="preserve">
+        <value>Token odświeżający jest nieprawidłowy.</value>
+    </data>
 </root>

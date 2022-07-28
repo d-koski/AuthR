@@ -30,4 +30,7 @@
     <data name="UserInvalidPassword" xml:space="preserve">
         <value>Invalid password.</value>
     </data>
+    <data name="InvalidRefreshToken" xml:space="preserve">
+        <value>The refresh token is invalid.</value>
+    </data>
 </root>

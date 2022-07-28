@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using AuthR.BusinessLogic.Abstractions.Services;
+using AuthR.BusinessLogic.Exceptions;
 using AuthR.Common.Abstractions.Services;
 using Microsoft.IdentityModel.Tokens;
 
@@ -52,10 +53,10 @@ AgMBAAE=";
     private const int AccessExpiresInMinutes = 10;
     private const int RefreshExpiresInDays = 7;
 
-    private readonly IDateTimeService _dateTimeService;
-
     private static readonly JwtSecurityTokenHandler JwtHandler = new();
 
+    private readonly IDateTimeService _dateTimeService;
+    
     public TokenService(IDateTimeService dateTimeService)
     {
         _dateTimeService = dateTimeService;
@@ -111,6 +112,21 @@ AgMBAAE=";
         return token;
     }
 
+    public Guid GetRefreshTokenGuid(string refreshToken)
+    {
+        try
+        {
+            var principal = JwtHandler.ValidateToken(refreshToken, GetRefreshTokenValidationParameters(), out _);
+            var guidValue = principal.Claims.First(x => x.Type == JwtRegisteredClaimNames.Jti).Value;
+            var guid = new Guid(guidValue);
+            return guid;
+        }
+        catch (SecurityTokenException)
+        {
+            throw new InvalidTokenException("InvalidRefreshToken");
+        }
+    }
+
     private static RsaSecurityKey NewRsaSecurityKey(RSA rsa)
     {
         var securityKey = new RsaSecurityKey(rsa)
@@ -121,5 +137,25 @@ AgMBAAE=";
             }
         };
         return securityKey;
+    }
+
+    private static TokenValidationParameters GetRefreshTokenValidationParameters()
+    {
+        var secretBytes = Encoding.ASCII.GetBytes(RefreshSecret);
+        var securityKey = new SymmetricSecurityKey(secretBytes);
+        return new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = Issuer,
+            ValidAudience = Audience,
+            IssuerSigningKey = securityKey,
+            CryptoProviderFactory = new CryptoProviderFactory
+            {
+                CacheSignatureProviders = false
+            }
+        };
     }
 }

@@ -70,6 +70,15 @@ namespace AuthR.Api.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Token odświeżający jest nieprawidłowy..
+        /// </summary>
+        internal static string InvalidRefreshToken {
+            get {
+                return ResourceManager.GetString("InvalidRefreshToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Użytkownik z podanym adresem email jest już zarejestrowany..
         /// </summary>
         internal static string UserEmailAlreadyRegistered {
