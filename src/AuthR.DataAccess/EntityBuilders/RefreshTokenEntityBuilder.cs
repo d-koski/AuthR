@@ -8,7 +8,7 @@ public static class RefreshTokenEntityBuilder
 {
     public static void Build(this EntityTypeBuilder<RefreshTokenEntity> entityBuilder)
     {
-        entityBuilder.ToTable("RefreshToken1");
+        entityBuilder.ToTable("RefreshToken");
         entityBuilder.HasKey(x => x.Id);
         
         entityBuilder.BuildIndexes();

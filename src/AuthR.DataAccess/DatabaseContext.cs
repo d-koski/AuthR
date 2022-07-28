@@ -14,6 +14,7 @@ public class DatabaseContext : DbContext
         _dateTimeService = dateTimeService;
     }
 
+    public DbSet<RefreshTokenEntity> RefreshTokens { get; set; } = null!;
     public DbSet<UserEntity> Users { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
