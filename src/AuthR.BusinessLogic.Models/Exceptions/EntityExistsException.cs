@@ -1,4 +1,4 @@
-﻿namespace AuthR.BusinessLogic.Exceptions;
+﻿namespace AuthR.BusinessLogic.Models.Exceptions;
 
 public class EntityExistsException : Exception
 {

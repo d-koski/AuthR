@@ -1,8 +1,8 @@
 ﻿using System.Security.Authentication;
 using AuthR.BusinessLogic.Abstractions.Services;
-using AuthR.BusinessLogic.Exceptions;
 using AuthR.BusinessLogic.Handlers.User;
 using AuthR.BusinessLogic.Models.Commands.User;
+using AuthR.BusinessLogic.Models.Exceptions;
 using AuthR.DataAccess.Abstractions;
 using AuthR.DataAccess.Abstractions.Repositories;
 using AuthR.DataAccess.Entities;

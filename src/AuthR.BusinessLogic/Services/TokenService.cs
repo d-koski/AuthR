@@ -3,7 +3,7 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using AuthR.BusinessLogic.Abstractions.Services;
-using AuthR.BusinessLogic.Exceptions;
+using AuthR.BusinessLogic.Models.Exceptions;
 using AuthR.Common.Abstractions.Services;
 using Microsoft.IdentityModel.Tokens;
 

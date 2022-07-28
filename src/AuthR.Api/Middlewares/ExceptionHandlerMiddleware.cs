@@ -1,7 +1,7 @@
 ﻿using System.Net.Mime;
 using System.Security.Authentication;
 using AuthR.Api.Localization;
-using AuthR.BusinessLogic.Exceptions;
+using AuthR.BusinessLogic.Models.Exceptions;
 using AuthR.BusinessLogic.Models.ViewModels;
 using Microsoft.Extensions.Localization;
 
