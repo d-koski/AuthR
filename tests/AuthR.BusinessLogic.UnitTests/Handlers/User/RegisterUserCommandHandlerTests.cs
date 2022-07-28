@@ -6,7 +6,7 @@ using AuthR.DataAccess.Abstractions;
 using AuthR.DataAccess.Abstractions.Repositories;
 using AuthR.DataAccess.Entities;
 
-namespace AuthR.BusinessLogic.UnitTests.Handlers;
+namespace AuthR.BusinessLogic.UnitTests.Handlers.User;
 
 public class RegisterUserCommandHandlerTests
 {
